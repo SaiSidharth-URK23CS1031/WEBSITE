@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Complaint Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        legend {
+            font-weight: bold;
+            color: #444;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, select, textarea, progress {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+        }
+        .inline-options label {
+            display: inline-block;
+            margin-right: 20px;
+            font-weight: normal;
+        }
+        .btn-group {
+            text-align: center;
+        }
+        input[type="submit"], input[type="reset"] {
+            width: 150px;
+            margin: 10px;
+            background: #4CAF50;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        input[type="reset"] {
+            background: #f44336;
+        }
+        input[type="submit"]:hover {
+            background: #45a049;
+        }
+        input[type="reset"]:hover {
+            background: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <!-- Online Complaint Registration Form -->
+    <div class="container">
+        <h1>Online Complaint Form</h1>
+        <form action="/serverlogic" method="post">
+            <!-- Personal Details -->
+            <fieldset>
+                <legend>Personal Details</legend>
+
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required autofocus>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter a secure password" required minlength="6" maxlength="12">
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="10-digit number" pattern="[0-9]{10}" required>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="18" max="100" required>
+
+                <label for="website">Website (if any):</label>
+                <input type="url" id="website" name="website" placeholder="https://example.com">
+
+                <label for="search">Search Complaint ID:</label>
+                <input type="search" id="search" name="search" placeholder="Enter complaint ID">
+
+                <label for="fileupload">Upload Evidence File:</label>
+                <input type="file" id="fileupload" name="fileupload" required>
+            </fieldset>
+
+            <!-- Complaint Details -->
+            <fieldset>
+                <legend>Complaint Details</legend>
+
+                <label>Complaint Type:</label>
+                <div class="inline-options">
+                    <input type="radio" id="service" name="complaint_type" value="Service" required>
+                    <label for="service">Service</label>
+                    <input type="radio" id="product" name="complaint_type" value="Product">
+                    <label for="product">Product</label>
+                </div>
+
+                <label>Preferred Contact Method:</label>
+                <div class="inline-options">
+                    <input type="checkbox" id="contact_email" name="contact_email" value="Email">
+                    <label for="contact_email">Email</label>
+                    <input type="checkbox" id="contact_phone" name="contact_phone" value="Phone">
+                    <label for="contact_phone">Phone</label>
+                    <input type="checkbox" id="contact_sms" name="contact_sms" value="SMS">
+                    <label for="contact_sms">SMS</label>
+                    <input type="checkbox" id="contact_whatsapp" name="contact_whatsapp" value="WhatsApp">
+                    <label for="contact_whatsapp">WhatsApp</label>
+                </div>
+
+                <label for="category">Complaint Category:</label>
+                <select id="category" name="category" required>
+                    <option value="">--Select Category--</option>
+                    <option value="billing">Billing Issue</option>
+                    <option value="delivery">Delivery Delay</option>
+                    <option value="quality">Product Quality</option>
+                    <option value="support">Customer Support</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="details">Complaint Details:</label>
+                <textarea id="details" name="details" rows="5" placeholder="Describe your complaint in detail..." required></textarea>
+
+                <label for="progress">Complaint Progress:</label>
+                <progress id="progress" value="30" max="100">30%</progress>
+            </fieldset>
+
+            <!-- Buttons -->
+            <div class="btn-group">
+                <input type="submit" value="Submit Complaint">
+                <input type="reset" value="Reset Form">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
