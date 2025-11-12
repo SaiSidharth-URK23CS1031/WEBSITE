@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Payroll Calculator</title>
+    <link rel="stylesheet" href="ex-6_style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Employee Payroll Calculator</h2>
+        <label>Basic Salary:</label>
+        <input type="number" id="basic" placeholder="Enter Basic Salary">
+        <label>HRA:</label>
+        <input type="number" id="hra" placeholder="Enter HRA">
+        <label>DA:</label>
+        <input type="number" id="da" placeholder="Enter DA">
+        <label>Incentive:</label>
+        <input type="number" id="incentive" placeholder="Enter Incentive">
+        <button id="calculate">Calculate Salary</button>
+        <div class="result">
+            <p id="gross"></p>
+            <p id="tax"></p>
+            <p id="net"></p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="ex-6(A).js"></script>
+</body>
+</html>
